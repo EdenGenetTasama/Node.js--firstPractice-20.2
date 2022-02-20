@@ -96,5 +96,38 @@ const  DivisionInArray=()=>{
     })
 }
 
-DivisionInArray();
-// console.log("Edennnn");
+// DivisionInArray();
+
+
+//////////////// Events //////////////////////
+
+const myEvent = require('./HelloClass');
+/*6-8*/
+
+myEvent.emitPrintHelloFun();
+myEvent.emitPrintWithName();
+
+myEvent.doNowEmit();
+myEvent.doNowEmit();
+myEvent.doNowEmit();
+
+/*9*/
+
+const printingHey = require('./PrintingClass');
+
+printingHey.emitPrintingNames('hello there as numbers' , 6);
+
+//10
+
+const listenToEvent = require('./Events');
+
+//11:
+const EventsTwo = require('./EventsTwo');
+
+// EventsTwo.PrintToFileEmit("Eden");
+
+//14:
+
+const EventArray= require('./EventsThree');
+const arrayOne = [15,20,30,80,50,44,55,96,99];
+EventArray.arrayEmitFun(arrayOne);
