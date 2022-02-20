@@ -46,11 +46,54 @@ const PushRandom = () => {
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 //write into file;
-Printing1Util14Numbers();
+// Printing1Util14Numbers();
 
 //read from file:
 
-fs.readFile("NumberUntil14.txt" , (error , result)=>{
-if(error) throw error;
-console.log(result.toString());
-})
+// fs.readFile("NumberUntil14.txt" , (error , result)=>{
+// if(error) throw error;
+// console.log(result.toString());
+// })
+
+//4 :
+
+const Print=()=>{
+    const arrayOfNames2 = ["Eden", "Daniel", "Avi", "Motti"];
+    fs.writeFile("ArrayNames.txt", arrayOfNames2.toString(), (error) => {
+        if (error) throw error;
+    });
+    fs.readFile("ArrayNames.txt", (error, result) => {
+        if (error) throw error;
+        const getResult = result.toString().split(',');
+        // console.log(getResult);
+        getResult.forEach(name =>{
+            if(name[0].toLocaleUpperCase() == "A") console.log(name);
+        }) 
+    }
+);
+};
+// Print();
+
+const RandomArray=[];
+
+const  DivisionInArray=()=>{
+    for (let i = 0; RandomArray.length < 12; i++) {
+        const randomNumber = Math.floor(Math.random()*100);
+        if (randomNumber % 3 ==0) {
+            RandomArray.push(randomNumber);
+        }
+    }
+
+    fs.writeFile('ArrayOfRandomNumbers' ,RandomArray.toString() , (error , result)=>{
+        if(error) throw error;
+    })
+    fs.readFile('ArrayOfRandomNumbers' , (error , result)=>{
+        if(error) throw error;
+        let arrayNumbers = result.toString().split(',');
+        arrayNumbers.forEach(item=>{
+            if(parseInt(item) > 50) console.log(item);
+        })
+    })
+}
+
+DivisionInArray();
