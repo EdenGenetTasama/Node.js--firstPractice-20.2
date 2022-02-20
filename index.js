@@ -97,3 +97,4 @@ const  DivisionInArray=()=>{
 }
 
 DivisionInArray();
+// console.log("Edennnn");
